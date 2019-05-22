@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="30 ngày làm thương hiệu cho kênh truyền thông của bạn">
+    <meta name="author" content="JUNO_OKYO">
+    <title>30 Days Plant | JUNO_OKYO</title>
+    <link href="https://junookyo.blogspot.com/favicon.ico" rel="icon" type="image/x-icon">
+    <link crossorigin="crossorigin" href="//cdnjs.cloudflare.com" rel="preconnect">
+    <link crossorigin="crossorigin" href="//ajax.googleapis.com" rel="preconnect">
+    <link crossorigin="crossorigin" href="//fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="crossorigin" href="//fonts.gstatic.com" rel="preconnect">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+    p.card-text, button {
+      font-family: 'Roboto', sans-serif;
+      font-size: 20px;
+    }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="css/album.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">Về tác giả</h4>
+              <p class="text-muted">Xin chào, tôi tên là Mạnh Tuấn (thường được biết với nickname JUNO_OKYO). Tôi là một Blogger, Developer và là trưởng nhóm J2TEAM. Tôi cũng là tác giả của J2TEAM Security - một extension được khá nhiều người dùng, trong đó có thể bao gồm cả bạn. Hehe...</p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Theo dõi tôi</h4>
+              <ul class="list-unstyled">
+                <li><a href="https://www.facebook.com/profile.php?id=100003880469096" class="text-white" target="_blank" rel="noopener">Facebook</a></li>
+                <li><a href="https://twitter.com/juno_okyo" class="text-white" target="_blank" rel="noopener">Twitter</a></li>
+                <li><a href="https://www.youtube.com/channel/UCEETpUrNm5qI-LENbBON2Gw?sub_confirmation=1" class="text-white" target="_blank" rel="noopener">Youtube</a></li>
+                <li><a href="https://github.com/J2TEAM" class="text-white" target="_blank" rel="noopener">GitHub</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+          <a href="index.html" class="navbar-brand d-flex align-items-center">
+            <strong>30 Days Plant</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main role="main" id="juno_okyo">
+      <section class="jumbotron text-center" id="top">
+        <div class="container">
+          <h1 class="jumbotron-heading">30 Days Plant</h1>
+          <p class="lead text-muted">30 ngày làm thương hiệu cho kênh truyền thông của bạn</p>
+          <p>
+            <button type="button" class="btn btn-primary my-2" v-on:click="getNewList">Tạo danh sách mới</button>
+            <button type="button" class="btn btn-secondary my-2" v-bind:class="{disabled: (loading.state === true && loading.btn === 'save')}" v-on:click="savePlant">{{(loading.state === true && loading.btn === 'save') ? 'Đang lưu...' : 'Lưu kế hoạch'}}</button>
+            <button type="button" class="btn btn-danger my-2" v-bind:class="{disabled: (loading.state === true && loading.btn === 'clear')}" v-on:click="clearPlant">{{(loading.state === true && loading.btn === 'clear') ? 'Đang xóa...' : 'Xóa kế hoạch đã lưu'}}</button>
+          </p>
+        </div>
+      </section>
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4" v-for="(day, i) in days">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" :data-src="`holder.js/100px225?text=Day ${i+1}&size=30&theme=sky`" height="225" width="100%">
+                <div class="card-body">
+                  <p class="card-text text-center">{{day}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#top">Về đầu trang</a>
+        </p>
+        <p>Nguồn: <strong>YOURCHICKGEEK</strong>. Việt hóa bởi team <strong>Biệt Đội Trăng Đen</strong> (Dịch: Ly Ly Chan - Thiết kế: Thanh Hill).</p>
+        <p>Phiên bản web phát triển bởi <a href="https://junookyo.blogspot.com/" target="_blank" rel="noopener">JUNO_OKYO</a>.</p>
+      </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.6/holder.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.7.3/localforage.min.js"></script>
+    <script src="js/juno_okyo.js"></script>
+  </body>
+</html>
