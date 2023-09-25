@@ -78,6 +78,9 @@
             <button type="button" class="btn btn-secondary my-2" v-bind:class="{disabled: (loading.state === true && loading.btn === 'save')}" v-on:click="savePlan">{{(loading.state === true && loading.btn === 'save') ? 'Đang lưu...' : 'Lưu kế hoạch'}}</button>
             <button type="button" class="btn btn-danger my-2" v-bind:class="{disabled: (loading.state === true && loading.btn === 'clear')}" v-on:click="clearPlan">{{(loading.state === true && loading.btn === 'clear') ? 'Đang xóa...' : 'Xóa kế hoạch đã lưu'}}</button>
           </p>
+          <div class="alert alert-success">
+            Theo dõi mình trên TikTok để biết thêm nhiều mẹo hay nhé: <a href="https://www.tiktok.com/@juno_okyo" target="_blank" rel="noopener noreferrer nofollow">https://www.tiktok.com/@juno_okyo</a>
+          </div>
         </div>
       </section>
       <div class="album py-5 bg-light">
